@@ -1,4 +1,4 @@
-# i3 config file (v4)
+# i3 config file (v4) 
 # https://i3wm.org/docs/userguide.html
 
 set $mod Mod4
@@ -33,7 +33,8 @@ bindsym XF86TouchpadToggle exec --no-startup-id touchpad_toggle
 
 bindsym Pause exec screenshot -sa --clipboard
 # bindsym Insert exec screenshot -sf --clipboard
-bindsym Insert exec scrot /tmp/screenshot.png && xclip -selection clipboard -t image/png -i /tmp/screenshot.png && notify-send "Screenshot copied to clipboard"
+# bindsym Insert exec scrot /tmp/screenshot.png && xclip -selection clipboard -t image/png -i /tmp/screenshot.png && notify-send "Screenshot copied to clipboard"
+bindsym Insert exec /bin/screenshot-copy.sh
 
 
 bindsym $mod+Return exec i3-sensible-terminal
@@ -78,7 +79,7 @@ bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
-bindsym $mod+Shift+x exec ~/.config/i3/show_bindings.sh
+# bindsym $mod+Shift+x exec ~/.config/i3/show_bindings.sh
 # move focused window
 bindsym $mod+Shift+j move left
 bindsym $mod+Shift+k move down
@@ -261,3 +262,5 @@ for_window [class="Qalculate-gtk"] floating enable, sticky enable
 for_window [class="Firefox Beta" title="Picture-in-Picture"] floating enable, sticky enable
 for_window [class="firefox-developer-edition" title="Picture-in-Picture"] floating enable, sticky enable
 for_window [class="Firefox" title="Picture-in-Picture"] floating enable, sticky enable
+
+
